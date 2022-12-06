@@ -1,0 +1,60 @@
+.aboutMeGrid{
+    --gap: 16px;
+    --num-cols: 2;
+    --row-height: 2;
+
+    box-sizing: border-box;
+    /*padding: var(--gap);*/
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px ,1fr));
+    grid-auto-rows: var(--row-height);
+    gap: var(--gap);
+}
+
+.aboutMeGrid>div{
+    text-align: center;
+}
+
+.aboutme_container{
+    max-width: 56%;
+    margin: auto;
+}
+
+.aboutme-img{
+    max-width: 80%;
+    border-radius: 50%;
+}
+
+.desc>div , .img-wrap>div{
+    margin: 0;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.text-wrap>p{
+    padding-bottom: 1rem;
+    font-size: large;
+    font-weight: bold;
+}
+
+.img-name-job>h3{
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    width: fit-content;
+    padding: 5px 10px 5px 10px;
+    margin: auto;
+}
+
+.img-name-job>h4{
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 600px) {
+    .aboutMeGrid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+  }
