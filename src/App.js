@@ -10,7 +10,7 @@ function App() {
             <Route exact path="/" element={<Home/>} />
           </Routes>
   </Router>*/}
-      <h1>halo</h1>
+      <Home />
     </>
   );
 }
