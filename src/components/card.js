@@ -33,7 +33,7 @@ function Card(props) {
             >
                 <motion.div style={{ borderRadius: '10px' }} className="card_link">
                     <div className="card_img-wrap">
-                        <motion.img style={{ borderRadius: '10px' }} layout className="card_img" src="/pictures/pic.png" />
+                        <motion.img style={{ borderRadius: '10px' }} layout className="card_img" src={props.src} />
                     </div>
                     <div className="card_title">
                         <motion.h5 layout="position" className="card_title-text">{props.desc}</motion.h5>
