@@ -5,11 +5,12 @@ import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 function App() {
   return (
     <>
-      <Router>
+      {/*<Router>
           <Routes>
             <Route exact path="/" element={<Home/>} />
           </Routes>
-      </Router>
+  </Router>*/}
+      <h1>halo</h1>
     </>
   );
 }
