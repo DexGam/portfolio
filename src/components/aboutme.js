@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import "../style/aboutme.css"
+//import selfPic from ".../public/pictures/me.png"
+//import selfPic from "../"
 
 class AboutMe extends Component {
     render() {
@@ -9,7 +11,7 @@ class AboutMe extends Component {
                     <div className="aboutMeGrid">
                         <div className="img-wrap">
                             <div className="img-name-job">
-                                <img className="aboutme-img" src="/pictures/me.png" />
+                                <img className="aboutme-img" src={process.env.PUBLIC_URL + "/pictures/me.png"} />
                                 <h3>Cseri Péter</h3>
                                 <h4>Font-End Developer</h4>
                             </div>
