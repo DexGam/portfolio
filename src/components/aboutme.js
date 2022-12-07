@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import "../style/aboutme.css"
-//import selfPic from ".../public/pictures/me.png"
-//import selfPic from "../"
 
 class AboutMe extends Component {
     render() {

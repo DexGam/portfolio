@@ -31,7 +31,7 @@ function CardContainer() {
                                     index="1"
                                     chosenIndex={chosenIndex}
                                     oldChosenIndex={refChoosenIndex.current}
-                                    src="/pictures/pic.png"
+                                    src={process.env.PUBLIC_URL + "/pictures/pic.png"}
                                     alt="TestImg"
                                     desc="Hackathon Budapest 2022, Wise Challenge"
                                 />
@@ -41,7 +41,7 @@ function CardContainer() {
                                     index="2"
                                     chosenIndex={chosenIndex}
                                     oldChosenIndex={refChoosenIndex.current}
-                                    src="/pictures/pic.png"
+                                    src={process.env.PUBLIC_URL + "/pictures/pic.png"}
                                     alt="TestImg"
                                     desc="Procedural Animation With The Help Of Neural Networks"
                                 />
@@ -53,7 +53,7 @@ function CardContainer() {
                                     index="3"
                                     chosenIndex={chosenIndex}
                                     oldChosenIndex={refChoosenIndex.current}
-                                    src="/pictures/pic.png"
+                                    src={process.env.PUBLIC_URL + "/pictures/pic.png"}
                                     alt="TestImg"
                                     desc="Mobile game Developed With Unity, Available On Google Play"
                                 />
