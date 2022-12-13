@@ -19,12 +19,12 @@ function Navbar() {
                 element.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 break;
             case "pro":
-                element = document.querySelector(".card");
-                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                element = document.querySelector(".divGrid");
+                element.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 break;
             case "cme":
-                element = document.querySelector("#morph");
-                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                element = document.querySelector("footer");
+                element.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 break;
             default:
         }
@@ -52,8 +52,6 @@ function Navbar() {
             <nav className='navbar'>
                 <div className='navbar-logo' onClick={closeMobileMenu}>
                     <span className="title">&lt;Portfolio /&#62;</span>
-                    {/*<span className="title">Portfolio</span>
-                    <i class="fa-solid fa-code"></i>*/}
                 </div>
                 <div className='menu-icon' onClick={handleClick}>
                     <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
@@ -89,7 +87,7 @@ function Navbar() {
                 <rect x="0" y="0" width="900" height="300" fill="#FFFFFF"></rect>
                 <path class="morph-nav"
                     d="M0 38L30 49.3C60 60.7 120 83.3 180 93.7C240 104 300 102 360 98C420 94 480 88 540 87C600 86 660 90 720 84.2C780 78.3 840 62.7 870 54.8L900 47L900 0L870 0C840 0 780 0 720 0C660 0 600 0 540 0C480 0 420 0 360 0C300 0 240 0 180 0C120 0 60 0 30 0L0 0Z"
-                    fill="#000000" stroke-linecap="round" stroke-linejoin="miter"></path>
+                    fill="#000000" strokeLinecap="round" strokeLinejoin="miter"></path>
             </svg>
         </>
     );

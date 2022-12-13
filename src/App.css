@@ -5,6 +5,10 @@
   font-family: 'Roboto Mono', monospace;
 }
 
+body{
+  position: relative;
+}
+
 .home {
   display: flex;
   height: 90vh;
@@ -14,7 +18,7 @@
 }
 
 ::-webkit-scrollbar {
-  width: 1em;
+  width: 1.2em;
 }
 
 ::-webkit-scrollbar-track {

@@ -1,5 +1,7 @@
 import Card from "./card";
 import "../style/cards.css"
+import { cardsData } from "../data/cardData";
+import { motion } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 
 function CardContainer() {
@@ -9,64 +11,79 @@ function CardContainer() {
     const refChoosenIndex = useRef();
     const [chosenIndex, setChosenIndex] = useState("0");
 
+    const dimOn = {
+        opacity: 0.2,
+        zIndex: 5
+    };
+
+    const dimOff = {
+        opacity: 0,
+        transitionEnd: {zIndex: "-1"}
+    };
+
+    const cardInView = {
+        y: 0,
+        opacity: 1,
+        transition: {delay: 0.2}
+    }
+
+    const cardOutView = {
+        y: +60,
+        opacity: 0
+    }
+
     useEffect(() => {
         refChoosenIndex.current = chosenIndex;
     }, [chosenIndex]);
 
     function ScrollToCard(targetClass){
         element = document.querySelector(targetClass);
-        console.log("element: ",element)
         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
     return (
         <>
-            
             <div className="cards">
                 <div className="cards_container">
                     <div className="cards_wrapper">
                         <div className="divGrid">
-                            <div onClick={() => ((chosenIndex === "1") ? setChosenIndex("0") : setChosenIndex("1"), ScrollToCard(".divGrid"))}>
+                            <motion.div initial={cardOutView} whileInView={cardInView} viewport={{ once: true }} className="grid-left" onClick={() => ((chosenIndex === "1") ? setChosenIndex("0") : setChosenIndex("1"), ScrollToCard(".grid-left"))}>
                                 <Card
-                                    index="1"
                                     chosenIndex={chosenIndex}
                                     oldChosenIndex={refChoosenIndex.current}
-                                    src={process.env.PUBLIC_URL + "/pictures/pic.png"}
-                                    alt="TestImg"
-                                    desc="Hackathon Budapest 2022, Wise Challenge"
+                                    src={process.env.PUBLIC_URL + "/pictures/wise.png"}
+                                    data={cardsData[0]}
                                 />
-                            </div>
-                            <div onClick={() => ((chosenIndex === "2") ? setChosenIndex("0") : setChosenIndex("2"), ScrollToCard(".divGrid"))}>
+                            </motion.div>
+                            <motion.div initial={cardOutView} whileInView={cardInView} viewport={{ once: true }} className="grid-right" onClick={() => ((chosenIndex === "2") ? setChosenIndex("0") : setChosenIndex("2"), ScrollToCard(".grid-right"))}>
                                 <Card
-                                    index="2"
                                     chosenIndex={chosenIndex}
                                     oldChosenIndex={refChoosenIndex.current}
-                                    src={process.env.PUBLIC_URL + "/pictures/pic.png"}
-                                    alt="TestImg"
-                                    desc="Procedural Animation With The Help Of Neural Networks"
+                                    src={process.env.PUBLIC_URL + "/pictures/gravity.png"}
+                                    data={cardsData[1]}
                                 />
-                            </div>
+                            </motion.div>
                         </div>
                         <div className="aloneGrid">
-                            <div onClick={() => ((chosenIndex === "3") ? setChosenIndex("0") : setChosenIndex("3"), ScrollToCard(".aloneGrid"))}>
+                            <motion.div initial={cardOutView} whileInView={cardInView} viewport={{ once: true }} onClick={() => ((chosenIndex === "3") ? setChosenIndex("0") : setChosenIndex("3"), ScrollToCard(".aloneGrid"))}>
                                 <Card
-                                    index="3"
                                     chosenIndex={chosenIndex}
                                     oldChosenIndex={refChoosenIndex.current}
-                                    src={process.env.PUBLIC_URL + "/pictures/pic.png"}
-                                    alt="TestImg"
-                                    desc="Mobile game Developed With Unity, Available On Google Play"
+                                    src={process.env.PUBLIC_URL + "/pictures/agent.png"}
+                                    data={cardsData[2]}
                                 />
-                            </div>
+                            </motion.div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            {/*<motion.div
+            <motion.div
                 className="dim-layer"
-                animate={{ opacity: chosenIndex != "0" ? .2 : 0 }}
-            />*/}
+                animate={chosenIndex != "0" ? dimOn : dimOff}
+                transition={{ delay: 0.3 }}
+                onClick={() => setChosenIndex("0")}
+            />
         </>
     )
 }

@@ -6,7 +6,7 @@
     box-sizing: border-box;
 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(10%, 1fr));
     gap: var(--gap);
   }
 
@@ -18,7 +18,7 @@
     box-sizing: border-box;
 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 750px));
+    grid-template-columns: repeat(auto-fit, minmax(10%, 75%));
     justify-content: center;
     padding-top: 3rem;
   }
@@ -41,6 +41,7 @@
     position: relative;
     display: flex;
     flex: 1;
+    cursor: pointer;
   }
   
   .card_link {
@@ -58,7 +59,6 @@
 
   .opened-card {
     border-radius: 15px;
-    cursor: pointer;
     height: 90vh;
     width: 80%;
     position: absolute;
@@ -93,12 +93,6 @@
   .opened-card .card_img{
     width: 50%;
   }
-
-  .opened-card .card_link{
-    box-shadow: 0 6px 100px rgba(0, 0, 0, 0.17);
-    -webkit-filter: drop-shadow(0 6px 100px rgba(0, 0, 0, 0.017));
-    filter: drop-shadow(0 6px 100px rgba(0, 0, 0, 0.017));
-  }
   
   .card_title, .card_desc {
     padding: 20px 30px 30px;
@@ -106,27 +100,62 @@
   }
   
   .card_title-text {
-    color: #252e48;
+    color: #000000;
     font-size: 18px;
     line-height: 24px;
   }
 
   .card_desc-text {
-    color: #425283;
-    font-size: 12px;
+    color: black;
+    font-size: 0.85rem;
     line-height: 24px;
+    width: 70%;
+    margin: auto;
   }
 
-  /*.dim-layer {
+  .ytVideo{
+    border-radius: 15px;
+    aspect-ratio: 16 / 9;
+	  height: 100%;
+	  width: 100%;
+  }
+
+  .video-wrap{
+    justify-content: center;
+    display: flex;
+    width: 70%;
+    margin: auto;
+    padding-top: 60px;
+  }
+
+  .link-wrap{
+    padding-top: 60px;
+    text-align: center;
+  }
+
+  .link-wrap .fa-brands{
+    padding-left: 3px;
+  }
+
+  .link{
+    color: black;
+    font-weight: bold;
+    padding-left: 5px;
+  }
+
+  .grid-right, .grid-left{
+    padding-top: 3rem;
+  }
+
+  .dim-layer {
     position: absolute;
     height: 100%;
     width: 100%;
     left: 0;
     top: 0;
     background: black;
-    opacity: 0.8;
-    pointer-events: none;
-  }*/
+    opacity: 0;
+  }
 
   @media only screen and (max-width: 800px) {
     .divGrid {
@@ -134,7 +163,13 @@
     }
   }
 
-  @media only screen and (max-width: 1871px) {
+  @media only screen and (max-width: 714px) {
+    .divGrid {
+      gap: 0;
+    }
+  }
+
+  @media only screen and (max-width: 800px) {
     .aloneGrid {
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       

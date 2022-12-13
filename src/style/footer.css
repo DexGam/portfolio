@@ -26,3 +26,10 @@ address{
     text-align: center;
     padding-top: 3rem;
 }
+
+.arrowUp{
+    max-height: 6rem;
+    max-width: 6rem;
+    margin: auto;
+    padding-top: 3rem;
+}
