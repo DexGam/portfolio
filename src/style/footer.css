@@ -1,6 +1,7 @@
 #morph{
     width: 100%;
     height: 100%;
+    display: block;
 }
 
 .footer-content{
@@ -12,6 +13,7 @@
 footer{
     color: white;
     background-color: black;
+    padding-top: 2rem;
 }
 
 .linkedin-link{

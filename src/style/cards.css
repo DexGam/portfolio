@@ -49,7 +49,7 @@
     display: flex;
     flex-flow: column;
     width: 100%;
-    height: 100%;
+    /*height: 100%;*/
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.17);
     -webkit-filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.017));
     filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.017));
@@ -107,8 +107,8 @@
 
   .card_desc-text {
     color: black;
-    font-size: 0.85rem;
-    line-height: 24px;
+    font-size: 1vw;
+    /*line-height: 24px;*/
     width: 70%;
     margin: auto;
   }
@@ -157,21 +157,34 @@
     opacity: 0;
   }
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 800px) and (min-width: 714px) {
     .divGrid {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 488px));
+      gap: 0
     }
   }
 
   @media only screen and (max-width: 714px) {
     .divGrid {
-      gap: 0;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0
     }
   }
 
   @media only screen and (max-width: 800px) {
     .aloneGrid {
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      
+    }
+
+    .card_desc-text{
+      font-size: 2vw;
+    }
+
+    .opened-card .card_img{
+      width: 80%;
+    }
+
+    .video-wrap{
+      width: 100%;
     }
   }
