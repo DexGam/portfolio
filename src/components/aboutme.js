@@ -11,7 +11,7 @@ class AboutMe extends Component {
                             <div className="img-name-job">
                                 <img className="aboutme-img" src={process.env.PUBLIC_URL + "/pictures/me.png"} />
                                 <h3>Cseri, Péter</h3>
-                                <h4>Front-End Developer</h4>
+                                <h4>Web Developer</h4>
                             </div>
                         </div>
                         <div className="desc">
