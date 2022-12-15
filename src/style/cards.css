@@ -177,14 +177,24 @@
     }
 
     .card_desc-text{
-      font-size: 2vw;
+      font-size: 10px;
+      width: 90%;
     }
 
     .opened-card .card_img{
-      width: 80%;
+      width: 100%;
+    }
+
+    .opened-card .card_img-wrap{
+      padding-top: 0;
     }
 
     .video-wrap{
       width: 100%;
+    }
+
+    .card_desc{
+      padding-left: 15px;
+      padding-right: 15px;
     }
   }
