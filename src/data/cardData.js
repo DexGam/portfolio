@@ -31,6 +31,17 @@ export const cardsData = [
         "moreIcons": [],
         "moreLink": [],
         "video": "https://youtube.com/embed/EtWR-67OvcM"
+    },
+    {
+        "index": "4",
+        "alt": "Logo of the website called Agile With Aigerim",
+        "title": "Website Of An Agile Consultant",
+        "longDes": "One of my colleagues apporoched me to create her a website, since she is launching an agile coach business. The goal here was to show every useful information about her course and consultation in a modern way. In this project I used React, Framer Motion for the animations, Three.js to embed the 3D model and Material UI since I had to be quick making this website. The site is deployed on github pages, it is up and running, you can check it out on the below link.",
+        "link": ["https://agilewithaigerim.com/", "www.agilewithaigerim.com"],
+        "icon": "fa-solid fa-book",
+        "moreIcons": [],
+        "moreLink": [],
+        "video": ""
     }
 ]
 

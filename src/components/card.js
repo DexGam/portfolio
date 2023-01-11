@@ -59,6 +59,7 @@ function Card(props) {
                                 <a className="link" href={props.data.moreLink[0]}>{props.data.moreLink[1]}</a>
                             </motion.div>
 
+                            {props.data.video != "" ? 
                             <motion.div className="video-wrap" initial={{opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9 }}>
                                 <iframe
                                     className="ytVideo"
@@ -66,7 +67,7 @@ function Card(props) {
                                     frameBorder="0"
                                     src={props.data.video}>
                                 </iframe>
-                            </motion.div>
+                            </motion.div> : null }
                         </div>
                     )}
                 </motion.div>

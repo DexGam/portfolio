@@ -18,13 +18,13 @@ function CardContainer() {
 
     const dimOff = {
         opacity: 0,
-        transitionEnd: {zIndex: "-1"}
+        transitionEnd: { zIndex: "-1" }
     };
 
     const cardInView = {
         y: 0,
         opacity: 1,
-        transition: {delay: 0.2}
+        transition: { delay: 0.2 }
     }
 
     const cardOutView = {
@@ -36,7 +36,7 @@ function CardContainer() {
         refChoosenIndex.current = chosenIndex;
     }, [chosenIndex]);
 
-    function ScrollToCard(targetClass){
+    function ScrollToCard(targetClass) {
         element = document.querySelector(targetClass);
         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
@@ -64,7 +64,25 @@ function CardContainer() {
                                 />
                             </motion.div>
                         </div>
-                        <div className="aloneGrid">
+                        <div className="divGrid secondRow">
+                            <motion.div initial={cardOutView} whileInView={cardInView} viewport={{ once: true }} className="grid-left-second" onClick={() => ((chosenIndex === "3") ? setChosenIndex("0") : setChosenIndex("3"), ScrollToCard(".grid-left-second"))}>
+                                <Card
+                                    chosenIndex={chosenIndex}
+                                    oldChosenIndex={refChoosenIndex.current}
+                                    src={process.env.PUBLIC_URL + "/pictures/agent.png"}
+                                    data={cardsData[2]}
+                                />
+                            </motion.div>
+                            <motion.div initial={cardOutView} whileInView={cardInView} viewport={{ once: true }} className="grid-right-second" onClick={() => ((chosenIndex === "4") ? setChosenIndex("0") : setChosenIndex("4"), ScrollToCard(".grid-right-second"))}>
+                                <Card
+                                    chosenIndex={chosenIndex}
+                                    oldChosenIndex={refChoosenIndex.current}
+                                    src={process.env.PUBLIC_URL + "/pictures/aigerimbackground.png"}
+                                    data={cardsData[3]}
+                                />
+                            </motion.div>
+                        </div>
+                        {/*<div className="aloneGrid">
                             <motion.div initial={cardOutView} whileInView={cardInView} viewport={{ once: true }} onClick={() => ((chosenIndex === "3") ? setChosenIndex("0") : setChosenIndex("3"), ScrollToCard(".aloneGrid"))}>
                                 <Card
                                     chosenIndex={chosenIndex}
@@ -73,7 +91,7 @@ function CardContainer() {
                                     data={cardsData[2]}
                                 />
                             </motion.div>
-                        </div>
+                        </div>*/}
                     </div>
                 </div>
             </div>
